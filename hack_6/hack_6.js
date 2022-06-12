@@ -15,7 +15,14 @@ let result = {
     name:"foo",
     role:"admin"
 };
-
- 
+for (key in result){
+    if(key == "name"){
+        result[key] = result[key][0].toUpperCase() + result[key].slice(1,);
+    }
+    if(key == "role"){
+        result[key] = result[key].toUpperCase();
+    }
+}
+ console.log(result);
 //export result
 module.exports = result; 

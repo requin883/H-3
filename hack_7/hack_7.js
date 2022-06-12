@@ -10,8 +10,8 @@ let foo = {
     role:"admin",
     skills:["javascript", "html", "css", "python", "flask", "react", "redux"]
 };
-let result;
-
+let result = [];
+foo.skills.map(item=>result.push(item));
 
 //export result
 module.exports = result; 

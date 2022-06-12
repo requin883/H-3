@@ -22,7 +22,7 @@ let bar = {
     alias:"Super Alias"
 }
 let result;
-
+result = {...foo,...bar};
 
 //export result
 module.exports = result; 
