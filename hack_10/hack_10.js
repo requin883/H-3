@@ -30,8 +30,11 @@ let levels = [{LEVEL:"l-1"},{LEVEL:"l-2"},{LEVEL:"l-3"}];
 let result ={};
 let i =1;
 levels.map(obj=>{obj.LEVEL=`L${i}`; i++});
-
+let newVar = [...skills.slice(0,2),...foo.skills.slice(0,3),...skills.slice(2,3),...foo.skills.slice(3),...skills.slice(3)];
 Object.keys(foo).map(property =>{
+if(property=="id"){
+    result[property] = foo.id;
+}
 if(property == "name"){ 
         result[property] = foo[property][0].toUpperCase() + foo[property].slice(1);
     }
@@ -41,12 +44,11 @@ if(property == "name"){
         result[property] = [result[property],roleSuperUser,roleUser];
     }
     if (property == "skills"){
-        result[property] = [...foo[property],...skills]
+        result[property] = newVar
         .map(item=> item=="html"||item=="css"?item.toUpperCase():item[0].toUpperCase()+item.slice(1));
     }
 })
 result["levels"] = levels;
-
 console.log(result);
 //export result
 module.exports = result; 
